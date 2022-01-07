@@ -42,6 +42,12 @@ resource "aws_lb_listener" "frontend" {
   }
 }
 
+resource "aws_alb_target_group_attachment" "frontend" {
+  target_group_arn = aws_lb_target_group.frontend_target_group.arn
+  target_id        = var.asg_public_id
+  port             = 80
+}
+
 #Backend
 resource "aws_lb" "backend_load_balancer" {
   name               = "Backend-Load-Balancer"
@@ -84,4 +90,10 @@ resource "aws_lb_listener" "backend" {
     target_group_arn = aws_lb_target_group.backend_target_group.arn
     type             = "forward"
   }
+}
+
+resource "aws_alb_target_group_attachment" "backend" {
+  target_group_arn = aws_lb_target_group.backend_target_group.arn
+  target_id        = var.asg_private_id
+  port             = 80
 }

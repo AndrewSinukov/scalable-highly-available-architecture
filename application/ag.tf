@@ -70,3 +70,11 @@ resource "aws_autoscaling_policy" "private_scaling_policy" {
     target_value = 80.0
   }
 }
+
+variable "asg_public_id" {
+  default = aws_autoscaling_group.ec2_public_autoscaling_group.id
+}
+
+variable "asg_private_id" {
+  default = aws_autoscaling_group.ec2_private_autoscaling_group.id
+}
