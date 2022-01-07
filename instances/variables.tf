@@ -19,3 +19,15 @@ variable "key_pair_name" {
   default     = "myEC2KeyPair"
 }
 
+variable "max_instance_size" {
+  description = "Max number instances to launch"
+}
+
+variable "min_instance_size" {
+  description = "Min number instances to launch"
+}
+
+variable "sns_email" {
+  default = "example@gmail.com"
+}
+
