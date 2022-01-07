@@ -1,13 +1,16 @@
 .idea/
 # Local .terraform directories
 **/.terraform/*
-infrastructure/.terraform/*
+network/.terraform/*
+application/.terraform/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
-infrastructure/*.tfstate
-infrastructure/*.tfstate.*
+network/*.tfstate
+application/*.tfstate
+network/*.tfstate.*
+application/*.tfstate.*
 
 # Crash log files
 crash.log
